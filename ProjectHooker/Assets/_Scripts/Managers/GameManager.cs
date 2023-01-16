@@ -24,9 +24,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnSceneChanged(Scene current, Scene next) {
-        if (next.name == "Game") {
-            RefManager.playerController.gameObject.SetActive(true);
-        }
+
     }
     
     private void ChangeState(GameState newState) {
