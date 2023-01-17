@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6a11ae06a785447b1b6bdf3ab9b0af, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  MaxMoveSpeed: 10
+  MaxMoveSpeed: 100
   Acceleration: 2
   Deceleration: 2
   AirAcceleration: 2

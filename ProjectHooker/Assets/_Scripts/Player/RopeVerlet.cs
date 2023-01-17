@@ -5,7 +5,7 @@ public class RopeVerlet : MonoBehaviour
 
     [Range(1, 100)][SerializeField] private int SimulationSteps = 10;
     [SerializeField] private int _pointsCount = 10;
-    [Range(0.0001f, 1)][SerializeField] private float _ropeSegmentLength = 0.5f;
+    [Range(0.0001f, 1)][SerializeField] public float RopeSegmentLength = 0.5f;
     [Range(0f, 1f)][SerializeField] private float _damping = 0.1f;
     [Range(0f, 10f)][SerializeField] private float _gravityStrength = 9.81f;
     [Range(0f,10f)][SerializeField]private float _targetMultiplier = 1f;
@@ -69,13 +69,13 @@ public class RopeVerlet : MonoBehaviour
         {
             Vector2 delta = _currentPointsPos[i] - _currentPointsPos[i + 1];
             float distance = delta.magnitude;
-            float error = Mathf.Abs(distance - _ropeSegmentLength);
+            float error = Mathf.Abs(distance - RopeSegmentLength);
             Vector2 changeDir = Vector2.zero;
-            if (distance > _ropeSegmentLength)
+            if (distance > RopeSegmentLength)
             {
                 changeDir = delta.normalized;
             }
-            else if (distance < _ropeSegmentLength)
+            else if (distance < RopeSegmentLength)
             {
                 changeDir = -delta.normalized;
             }

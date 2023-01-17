@@ -60,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
             else
                 acceleration = _playerSettings.AirDeceleration;
         }
-
-        _rb.velocity = new Vector2(Mathf.MoveTowards(currentVelocity, targetVelocity, acceleration * 50 * Time.fixedDeltaTime), _rb.velocity.y);
+        if (targetVelocity != 0 || _playerController.IsGrounded)
+            _rb.velocity = new Vector2(Mathf.MoveTowards(currentVelocity, targetVelocity, acceleration * 50 * Time.fixedDeltaTime), _rb.velocity.y);
     }
 
     private void BufferedJumpCheck()

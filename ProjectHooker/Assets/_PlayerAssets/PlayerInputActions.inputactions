@@ -137,7 +137,7 @@
                     "id": "7682a3ab-7c18-44f2-a121-27f74fa1ff94",
                     "path": "1DAxis",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Invert",
                     "groups": "",
                     "action": "UpDown",
                     "isComposite": true,
