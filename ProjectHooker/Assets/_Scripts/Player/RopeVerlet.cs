@@ -4,21 +4,23 @@ public class RopeVerlet : MonoBehaviour
 {
 
     [SerializeField] private int _pointsCount = 10;
-    [SerializeField] private Vector2[] _currentPointsPos;
     [Range(0.0001f,1)][SerializeField] private float _ropeSegmentLength = 0.5f;
     [Range(0f,1f)][SerializeField] private float _damping = 0.1f;
     [Range(0f,10f)][SerializeField]private float _gravityStrength = 9.81f;
-    [Range(0f,15f)][SerializeField]private float _ropeMoveDeltaMax= 5f;
+    [SerializeField] private Vector2[] _currentPointsPos;
     private Vector2[] _lastPointsPos;
+    private Vector2[] _velocities;
 
     private void Start()
     {
         _currentPointsPos = new Vector2[_pointsCount];
         _lastPointsPos = new Vector2[_pointsCount];
+        _velocities = new Vector2[_pointsCount];
         for (int i = 0; i < _pointsCount; i++)
         {
             _currentPointsPos[i] = transform.position;
             _lastPointsPos[i] = transform.position;
+            _velocities[i] = Vector2.zero;
         }
     }
 
@@ -29,10 +31,9 @@ public class RopeVerlet : MonoBehaviour
         {
             Vector2 temp = _currentPointsPos[i];
             //apply gravity
-            _currentPointsPos[i] += Vector2.down * _gravityStrength * Time.deltaTime;
-            _currentPointsPos[i] += (_currentPointsPos[i] - _lastPointsPos[i])*(_damping * (_currentPointsPos[i] - _lastPointsPos[i]).magnitude);
-            // _currentPointsPos[i] += (_currentPointsPos[i] - _lastPointsPos[i])*_damping ;
-            
+            _velocities[i] += Vector2.down * _gravityStrength * Time.deltaTime;
+            _velocities[i] *= (1f - _damping);
+            _currentPointsPos[i] += _velocities[i];
             _lastPointsPos[i] = temp;
             // constrain points in the rope
             if (i == 0)
@@ -51,7 +52,6 @@ public class RopeVerlet : MonoBehaviour
             }
 
         }
-
     }
 
     private void OnDrawGizmos()
