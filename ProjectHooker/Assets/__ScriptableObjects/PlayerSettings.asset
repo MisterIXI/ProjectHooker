@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
   MaxMoveSpeed: 10
-  Acceleration: 107
-  Deceleration: 105
-  AirAcceleration: 0.1
-  AirDeceleration: 0.1
+  Acceleration: 2
+  Deceleration: 2
+  AirAcceleration: 2
+  AirDeceleration: 2
   TerminalVelocity: 30
-  CayoteeTime: 0.2
+  CoyoteTime: 0.2
   JumpBufferTime: 0.2
-  JumpVelocity: 5
-  VarHeightModifier: 0.5
+  JumpVelocity: 10
+  VarHeightModifier: 0.438

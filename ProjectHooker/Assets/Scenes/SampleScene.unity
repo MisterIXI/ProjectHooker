@@ -211,7 +211,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.06
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -1.7, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -318,7 +318,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 598933991}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 35f2f5b70673f5a4b92353ff3b93125e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -561,7 +561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817387737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16, y: 3.14, z: -0.031510256}
+  m_LocalPosition: {x: -0.42, y: 3.26, z: -0.031510256}
   m_LocalScale: {x: 12.901277, y: 1.0427629, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -577,7 +577,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 817387737}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 35f2f5b70673f5a4b92353ff3b93125e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -688,7 +688,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1001006203}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 35f2f5b70673f5a4b92353ff3b93125e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -799,7 +799,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1146139856}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 35f2f5b70673f5a4b92353ff3b93125e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -910,7 +910,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1377257096}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 35f2f5b70673f5a4b92353ff3b93125e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -988,6 +988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999495954}
+  - component: {fileID: 1999495955}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1003,13 +1004,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999495953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4037821, y: -3.5964663, z: 1.0769327}
+  m_LocalPosition: {x: -10.95, y: 5.96, z: 1.0769327}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1999495955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999495953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace11d6989d8ae541a46bf5ae95b343e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pointsCount: 50
+  _ropeSegmentLength: 0.1
+  _damping: 0.5
+  _gravityStrength: 9.81
+  _currentPointsPos: []
 --- !u!1001 &172870283406128874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1116,6 +1134,18 @@ PrefabInstance:
     - target: {fileID: 2618350480481720641, guid: 8823a41c897ec634eb57a9087bafb1cb, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242459027331101700, guid: 8823a41c897ec634eb57a9087bafb1cb, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242459027331101700, guid: 8823a41c897ec634eb57a9087bafb1cb, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5242459027331101700, guid: 8823a41c897ec634eb57a9087bafb1cb, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6644415543226328460, guid: 8823a41c897ec634eb57a9087bafb1cb, type: 3}
       propertyPath: m_RootOrder
