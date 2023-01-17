@@ -28,6 +28,8 @@ public class InputManager : MonoBehaviour
     public Action<CallbackContext> OnSecondary = delegate { };
     public Action<CallbackContext> OnAim = delegate { };
     public Action<CallbackContext> OnRun = delegate { };
+    public Action<CallbackContext> OnJump = delegate { };
+
     public Action<CallbackContext> OnHelperVision = delegate { };
     public Action<CallbackContext> OnPause = delegate { };
     private void SubscribeToActionMap(InputActionAsset playerInputActions)
@@ -50,6 +52,9 @@ public class InputManager : MonoBehaviour
         playerInputActions["Run"].started += OnRunInput;
         playerInputActions["Run"].performed += OnRunInput;
         playerInputActions["Run"].canceled += OnRunInput;
+        playerInputActions["Jump"].started += OnJumpInput;
+        playerInputActions["Jump"].performed += OnJumpInput;
+        playerInputActions["Jump"].canceled += OnJumpInput;
         playerInputActions["HelperVision"].started += OnHelperVisionInput;
         playerInputActions["HelperVision"].performed += OnHelperVisionInput;
         playerInputActions["HelperVision"].canceled += OnHelperVisionInput;
@@ -87,6 +92,11 @@ public class InputManager : MonoBehaviour
         OnRun(context);
     }
 
+    public void OnJumpInput(CallbackContext context)
+    {
+        OnJump(context);
+    }
+    
     public void OnHelperVisionInput(CallbackContext context)
     {
         OnHelperVision(context);

@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6a11ae06a785447b1b6bdf3ab9b0af, type: 3}
   m_Name: PlayerSettings
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  MaxMoveSpeed: 10
+  Acceleration: 107
+  Deceleration: 105
+  AirAcceleration: 0.1
+  AirDeceleration: 0.1
+  TerminalVelocity: 30
+  CayoteeTime: 0.2
+  JumpBufferTime: 0.2
+  JumpVelocity: 5
+  VarHeightModifier: 0.5

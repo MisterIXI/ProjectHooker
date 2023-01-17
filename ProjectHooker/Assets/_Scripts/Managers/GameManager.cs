@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    public PlayerSettings PlayerSettings;
     public Action<GameState, GameState> OnGameStateChanged = delegate { };
     public GameState state { get; private set; }
-    public enum GameState {
+    public enum GameState
+    {
         Menu,
         Game,
         Pause
     }
-    private void Awake() {
-        if (RefManager.gameManager != null) {
+    private void Awake()
+    {
+        if (RefManager.gameManager != null)
+        {
             Destroy(gameObject);
             return;
         }
@@ -23,11 +26,13 @@ public class GameManager : MonoBehaviour
         SceneManager.activeSceneChanged += OnSceneChanged;
     }
 
-    private void OnSceneChanged(Scene current, Scene next) {
+    private void OnSceneChanged(Scene current, Scene next)
+    {
 
     }
-    
-    private void ChangeState(GameState newState) {
+
+    private void ChangeState(GameState newState)
+    {
         GameState oldState = state;
         state = newState;
         OnGameStateChanged(oldState, newState);
